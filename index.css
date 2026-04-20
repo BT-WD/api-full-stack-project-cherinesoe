@@ -1,1 +1,51 @@
+body {
+    background-color: #bcddd6;
+    font-family: 'Cabin', sans-serif;
+}
 
+h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+input {
+    font-size: 20px;
+    padding: 5px;
+    margin-left: 100px;
+    width: 500px;
+    height: 40px;
+}
+
+input::placeholder {
+  color: gray;
+  font-style: italic;
+  opacity: 1;
+}
+
+.search {
+  display: flex;          
+  align-items: flex-end;  /* Aligns the bottom of the bar and dropdown */
+  /* gap: 250px;*/
+}
+
+#dropdown {
+  margin: 20px;
+  font-family: 'Cabin', sans-serif;
+}
+
+#dropdown label {
+  font-weight: bold;
+  color: #333;
+  font-size: 20px;
+  margin-left: 80px;
+}
+
+#cuisines {
+  font-size: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  height: 40px
+}
