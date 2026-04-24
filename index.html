@@ -11,12 +11,20 @@
     <div class="container">
       <h1 class="app-title">recipe finder: explore cuisines and use ingredients laying around</h1>
       <div class="search">
-         <input id="search-bar" type="text" placeholder="Enter main ingredient...">
-
+        <input id="search-bar" type="text" placeholder="enter main ingredient..."></input>
+        <button id="find">find recipe</button>
         <form id="dropdown">
-          <label for="cuisines">Choose a cuisine:</label>
-          <select name="cuisines" id="cuisines"></select>
+          <label>choose a cuisine:</label>
+          <select id="cuisines" name="cuisines"></select>
         </form>
+      </div>
+      <div id="recipesnliked">
+        <div id="recipes">
+
+        </div>
+        <div id="liked">
+          <h2>liked recipes:</h2>
+        </div>
       </div>
     </div>
     <script src="index.js"></script>
