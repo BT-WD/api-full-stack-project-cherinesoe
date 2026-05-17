@@ -62,14 +62,33 @@ button {
 
 #recipes {
   background-color: #e7e8f4;
-  float: left;
-  height: 700px;
+  height: 650px;
   width: 1400px;
-  margin-left: 100px;
+  margin-left: 60px;
   margin-top: 20px;
   overflow-y: auto;
+  display: flex;
+  justify-content: center;
 }
 
+#recipeInfo {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#img {
+  width: 500px;
+  height: 500px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+#button {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* 
 #liked {
   background-color: #e7e8f4;
   float: right;
@@ -78,8 +97,5 @@ button {
   margin-top: 20px;
   margin-right: 100px;
   overflow-y: auto;
-}
-
-h2 {
-  margin-left: 20px;
-}
+} */
+/* 
