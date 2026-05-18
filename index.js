@@ -6,7 +6,8 @@ const recipeImg = document.getElementById("recipeImg");
 const recipeName = document.getElementById("recipeName");
 const text = document.getElementById("text")
 const instructions = document.getElementById("instructions");
-const likedBtn = document.getElementById("liked");
+const likedBtn = document.getElementById("likedBtn");
+const likedList = document.getElementById("likedList");
 recipeImg.style.setProperty("display", "none");
 
 
@@ -119,12 +120,23 @@ const displayRecipes = (info) => {
   instructions.innerText = info.strInstructions;
 };
 
+const populateLiked = () => {
+  const liked = JSON.parse(localStorage.getItem("liked")) || [];
+  list = "";
+
+  for (const like of liked) {
+    list += like + '\n';
+  }
+  
+  likedList.innerText = list;
+
+  localStorage.setItem("liked", JSON.stringify(liked));
+}
+
 getCuisines().then(populateCuisineDropdown);
+populateLiked();
 
 findBtn.addEventListener('click', async () => {
-  // const mainIng = getMainIngredient(searchBar.value);
-  // const cuisineRecipes = getCuisineRecipes();
-
   const results = await getRecipes();
   const randomRecipe = results[Math.floor(Math.random() * results.length)];
 
@@ -142,8 +154,11 @@ findBtn.addEventListener('click', async () => {
   const info = await getRecipeInfo(randomRecipe);
 
   displayRecipes(info);
-});
 
-likedBtn.addEventListener('click', async () => {
-  
+  likedBtn.onclick = () => {
+    const liked = JSON.parse(localStorage.getItem("liked")) || [];
+    liked.push(info.strMeal);
+    localStorage.setItem("liked", JSON.stringify(liked));
+    populateLiked();
+  }
 });
